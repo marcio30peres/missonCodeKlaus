@@ -11,14 +11,16 @@ export class Game {
 }
 
 export class Neighbourhood {
-  constructor(width, height) {
+  constructor(el, width, height) {
+    this.el = el
     this.width = width
     this.height = height
   }
 }
 
 export class Santa {
-  constructor(posX, posY, giftsCarried) {
+  constructor(el, posX, posY, giftsCarried) {
+    this.el = el
     this.posX = posX
     this.posY = posY
     this.giftsCarried = giftsCarried
@@ -44,7 +46,8 @@ export class Santa {
 }
 
 export class Child {
-  constructor(name, wish, nbhX, nbhY) {
+  constructor(el, name, wish, nbhX, nbhY) {
+    this.el = el
     this.name = name
     this.wish = wish
     this.giftDelivered = false
@@ -54,7 +57,8 @@ export class Child {
 }
 
 export class Gift {
-  constructor(nbhX, nbhY, content) {
+  constructor(el, nbhX, nbhY, content) {
+    this.el = el
     this.posX = Math.floor(Math.random() * nbhX)
     this.posY = Math.floor(Math.random() * nbhY)
     this.content = content
@@ -62,7 +66,8 @@ export class Gift {
 }
 
 export class Dog {
-  constructor(posX, posY) {
+  constructor(el, posX, posY) {
+    this.el = el
     this.posX = posX
     this.posY = posY
   }
