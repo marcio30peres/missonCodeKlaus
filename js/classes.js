@@ -49,3 +49,21 @@ export class Child {
     this.posY = Math.floor(Math.random()*nbhY);
   }
 }
+
+export class Child {
+  constructor(name, wish, nbhX, nbhY) {
+    this.name = name
+    this.wish = wish
+    this.giftDelivered = false
+    this.posX = Math.floor(Math.random() * nbhX)
+    this.posY = Math.floor(Math.random() * nbhY)
+  }
+}
+
+export class Gift {
+  constructor(nbhX, nbhY, content) {    
+    this.posX = Math.floor(Math.random()*nbhX);
+    this.posY = Math.floor(Math.random()*nbhY);
+    this.content = content;
+  }
+}
