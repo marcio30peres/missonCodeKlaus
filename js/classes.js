@@ -1,12 +1,21 @@
 export class Game {
   constructor(level) {
     this.level = level
+    this.nGifts = 1
+    this.nChildren = 1
+    this.nDogs = 0
   }
   increaseLevel() {
     this.level = this.level + 1
+    this.nGifts = this.nGifts + 1
+    this.nChildren = this.nChildren + 1
+    this.nDogs = this.nDogs + 1
   }
-  endGame() {
+  loose() {
     // finish when Santa's bitten
+  }
+  win() {
+    // Coangrats the winner
   }
 }
 
@@ -84,7 +93,7 @@ export class Dog {
     this.posX = this.posX - 1
   }
   bite(game) {
-    game.endGame()
+    game.loose()
   }
   move(santaX, santaY, game) {
     if (this.posX == santaX && this.posY == santaY) {
