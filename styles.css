@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+button,
+input,
+a {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  /* font-family: 'Patrick Hand SC', cursive; */
+  color: black;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#main {
+  flex: 1;
+}
+
+#controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 3rem auto 0;
+}
+
+#controls button {
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+#direction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#actions,
+#direction div {
+  display: flex;
+  gap: 1.5rem;
+}
+
+#actions {
+  flex-direction: column;
+  height: 4rem;
+  width: 5rem;
+  position: relative;
+}
+
+#actions #read {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+#actions #toggleGift {
+  position: absolute;
+  right: 0;
+}
+
+footer {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+footer a {
+  color: rgb(96, 22, 233);
+}
