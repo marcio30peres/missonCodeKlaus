@@ -6,3 +6,10 @@ export class Game {
     this.level = this.level + 1
   }
 }
+
+export class Neighbourhood {
+  constructor(width, height) {
+    this.width = width
+    this.height = height
+  }
+}
