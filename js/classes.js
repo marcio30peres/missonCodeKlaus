@@ -5,6 +5,9 @@ export class Game {
   increaseLevel() {
     this.level = this.level + 1
   }
+  endGame() {
+    // finish when Santa's bitten
+  }
 }
 
 export class Neighbourhood {
@@ -41,16 +44,6 @@ export class Santa {
 }
 
 export class Child {
-  constructor(name, wish, nbhX, nbhY) {    
-    this.name = name;
-    this.wish = wish;
-    this.giftDelivered = false;
-    this.posX = Math.floor(Math.random()*nbhX);
-    this.posY = Math.floor(Math.random()*nbhY);
-  }
-}
-
-export class Child {
   constructor(name, wish, nbhX, nbhY) {
     this.name = name
     this.wish = wish
@@ -61,9 +54,47 @@ export class Child {
 }
 
 export class Gift {
-  constructor(nbhX, nbhY, content) {    
-    this.posX = Math.floor(Math.random()*nbhX);
-    this.posY = Math.floor(Math.random()*nbhY);
-    this.content = content;
+  constructor(nbhX, nbhY, content) {
+    this.posX = Math.floor(Math.random() * nbhX)
+    this.posY = Math.floor(Math.random() * nbhY)
+    this.content = content
+  }
+}
+
+export class Dog {
+  constructor(posX, posY) {
+    this.posX = posX
+    this.posY = posY
+  }
+  moveUp() {
+    this.posY = this.posY + 1
+  }
+  moveDown() {
+    this.posY = this.posY - 1
+  }
+  moveRight() {
+    this.posX = this.posX + 1
+  }
+  moveLeft() {
+    this.posX = this.posX - 1
+  }
+  bite(game) {
+    game.endGame()
+  }
+  move(santaX, santaY, game) {
+    if (this.posX == santaX && this.posY == santaY) {
+      this.bite(game)
+    } else {
+      if (this.posX < santaX) {
+        this.moveRight()
+      } else {
+        this.moveLeft()
+      }
+      if (this.posY < santaY) {
+        this.moveUp()
+      } else {
+        this.moveDown()
+      }
+    }
   }
 }
